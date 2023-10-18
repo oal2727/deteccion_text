@@ -17,6 +17,7 @@ extension.py , modificar BASE_URL
  3. authenticacion de apis (x)
  4. conexion con postgres
  5. middleware con token y sin middleware (x)
+ 
  6. implementar tessearct ocr 
  7. obtener el texto
 # implementar docketr

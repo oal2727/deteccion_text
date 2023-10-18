@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.10.6-slim
+FROM python:3.10.13-slim
 
 
 WORKDIR /app
@@ -25,6 +25,6 @@ RUN pip install -r requeriments.txt
 
 COPY . .
 
-EXPOSE 5000
+EXPOSE 5002
 
 CMD [ "python", "index.py" ]
