@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build: /app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: ocr
+      POSTGRES_USER: postgres
+
