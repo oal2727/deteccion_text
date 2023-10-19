@@ -4,4 +4,4 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 migrate = Migrate()
 
-BASE_URL="http://localhost:5001"
+BASE_URL="http://localhost:8000"

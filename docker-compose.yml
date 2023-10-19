@@ -19,6 +19,6 @@ services:
     depends_on:
     - postgres
     ports:
-      - "0.0.0.0:5002:5002"
+      - "8000:8000"
     volumes:
       - .:/app

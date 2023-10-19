@@ -26,12 +26,11 @@ from flask_jwt_extended import JWTManager
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
-# trabajar hasta que salga todo en mi pc normal
 
 # app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:root@db/ocr"
 app.config['SECRET_KEY'] = 'super-secret'
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://DASH:mysecretpassword@localhost/platform"
-cors = CORS(app)
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://dash:password@postgres/ocr"
+cors = CORS(app,resources={r"/api/*":{"origins":"http://localhost:8000"}})
 
 bcrypt = Bcrypt(app)
 
@@ -178,4 +177,5 @@ def migrate():
 
 
 if __name__ == "__main__":
-    app.run(host="localhost",debug=True,port=5002)
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8000)

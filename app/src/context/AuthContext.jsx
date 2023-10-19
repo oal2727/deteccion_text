@@ -7,8 +7,6 @@ const AuthContextProvider = ({children})=>{
     const initialState={
         auth:false,
         spinner:true,
-        message:{show:false,description:null},
-        userToken:false,
     };
 
     const [authUser,dispatch] = React.useReducer(AuthReducer,initialState)
